@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -30,7 +32,22 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="D:/Code/C++ Projects/SDL2-2.0.8/i686-w64-mingw32/include/SDL2" />
+			<Add directory="D:/Code/C++ Projects/SDL2_mixer-2.0.2/i686-w64-mingw32/include/SDL2" />
+			<Add directory="D:/Code/C++ Projects/SDL2_image-2.0.3/i686-w64-mingw32/include/SDL2" />
 		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer" />
+			<Add directory="D:/Code/C++ Projects/SDL2-2.0.8/i686-w64-mingw32/lib" />
+			<Add directory="D:/Code/C++ Projects/SDL2_mixer-2.0.2/i686-w64-mingw32/lib" />
+			<Add directory="D:/Code/C++ Projects/SDL2_image-2.0.3/i686-w64-mingw32/lib" />
+		</Linker>
+		<Unit filename="assets/images/logo/Lazeras.png" />
+		<Unit filename="include/Window.h" />
+		<Unit filename="include/WindowProperty.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Window.cpp" />
+		<Unit filename="src/WindowProperty.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
