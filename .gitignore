@@ -28,3 +28,9 @@
 # Executables
 *.out
 *.app
+
+
+#codeblocks
+*.layout
+*.cbp
+*.depend
