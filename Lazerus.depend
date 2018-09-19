@@ -715,11 +715,10 @@
 	<SDL_image.h>
 	"WindowProperty.h"
 
-1537329067 d:\code\c++ projects\lazerus\game_engine\include\windowproperty.h
+1537402112 d:\code\c++ projects\lazerus\game_engine\include\windowproperty.h
 	<iostream>
 	<fstream>
 	<string>
-	<windows.h>
 	<SDL.h>
 
 1537395391 source:d:\code\c++ projects\lazerus\game_engine\src\vector2d.cpp

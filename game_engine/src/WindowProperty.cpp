@@ -45,10 +45,10 @@ void WindowProperty::setWindowProperty(WindowValue scale) {
     remove("data/WindowScreen.dat");
     std::ofstream out("data/WindowScreen.dat",std::ios::binary);
     out.write((char*) &scale, sizeof(scale));
-    int attributes = GetFileAttributes("data/WindowScreen.dat");
-    if((attributes & FILE_ATTRIBUTE_HIDDEN)==0) {
-        SetFileAttributes("data/WindowScreen.dat", attributes + FILE_ATTRIBUTE_HIDDEN);
-    }
+//    int attributes = GetFileAttributes("data/WindowScreen.dat");
+//    if((attributes & FILE_ATTRIBUTE_HIDDEN)==0) {
+//        SetFileAttributes("data/WindowScreen.dat", attributes + FILE_ATTRIBUTE_HIDDEN);
+//    }
     windowValue=scale;
     out.close();
 }
