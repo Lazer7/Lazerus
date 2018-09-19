@@ -1,3 +1,8 @@
+# Codeblocks
+*.layout
+*.cbp
+*.depend
+
 # Prerequisites
 *.d
 
@@ -29,8 +34,3 @@
 *.out
 *.app
 
-
-#codeblocks
-*.layout
-*.cbp
-*.depend

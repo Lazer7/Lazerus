@@ -14,6 +14,7 @@ class Window
     public:
         Window();
         virtual ~Window();
+        void loadingScreen();
         void handleEvents();
         void render();
         void update();

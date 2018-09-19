@@ -4,8 +4,8 @@
 
 // Static window properties
 const std::string WindowProperty::title="Lazerus Game Engine";
-const int WindowProperty::WindowHeight = 600;
-const int WindowProperty::WindowWidth = 1000;
+const int WindowProperty::WindowHeight = 500;
+const int WindowProperty::WindowWidth = 500;
 WindowValue WindowProperty::windowValue;
 SDL_Window* WindowProperty::window = NULL;
 SDL_Surface* WindowProperty::screen_surface = NULL;
