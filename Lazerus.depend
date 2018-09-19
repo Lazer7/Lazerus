@@ -684,14 +684,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1537312375 d:\code\c++ projects\lazerus\include\windowproperty.h
+1537329067 d:\code\c++ projects\lazerus\include\windowproperty.h
 	<iostream>
 	<fstream>
 	<string>
 	<windows.h>
 	<SDL.h>
 
-1537327135 source:d:\code\c++ projects\lazerus\src\window.cpp
+1537328727 source:d:\code\c++ projects\lazerus\src\window.cpp
 	"Window.h"
 
 1519936451 d:\code\c++ projects\sdl2_image-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
@@ -700,7 +700,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1537326458 source:d:\code\c++ projects\lazerus\src\windowproperty.cpp
+1537329646 source:d:\code\c++ projects\lazerus\src\windowproperty.cpp
 	"WindowProperty.h"
 	"WindowProperty.h"
 

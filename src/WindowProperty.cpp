@@ -85,13 +85,13 @@ void WindowProperty::resizeWindowEvent() {
     if(event.type == SDL_WINDOWEVENT){
         switch(event.window.event){
         case SDL_WINDOWEVENT_SIZE_CHANGED:
-            if(event.window.data1 < 1000 || event.window.data2 < 600) {
+            if(event.window.data1 < WindowProperty::WindowWidth || event.window.data2 < WindowProperty::WindowHeight) {
                 WindowProperty::setDefaultWindowProperty();
-                SDL_SetWindowSize(window,1000,600);
+                SDL_SetWindowSize(window,WindowProperty::WindowWidth,WindowProperty::WindowHeight);
             }
             else{
-                float wScale = (float)(event.window.data1) /1000.0f;
-                float hScale = (float)(event.window.data2) /600.0f;
+                float wScale = (float)(event.window.data1) / (float)WindowProperty::WindowWidth;
+                float hScale = (float)(event.window.data2) / (float)WindowProperty::WindowHeight;
                 WindowProperty::setWindowProperty(event.window.data1,
                                                      event.window.data2,
                                                      wScale,
@@ -107,11 +107,11 @@ void WindowProperty::resizeWindowEvent() {
     Get the window's width distortion based on the orignal size
 */
 float WindowProperty::getWidthDisposition() {
-    return (float)WindowProperty::windowValue.width/1000.0f;
+    return (float)WindowProperty::windowValue.width/ (float)WindowProperty::WindowWidth;
 }
 /**
     Get the window's height distortion based on the orignal size
 */
 float WindowProperty::getHeightDisposition() {
-    return (float)WindowProperty::windowValue.height/600.0f;
+    return (float)WindowProperty::windowValue.height/ (float)WindowProperty::WindowHeight;
 }

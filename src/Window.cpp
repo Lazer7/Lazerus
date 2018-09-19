@@ -1,5 +1,6 @@
 #include "Window.h"
 int cnt=0;
+SDL_Texture* spriteSheetTexture;
 /**
     Window Initialization: Sets the attributes of the game window
     @param width of the screen
@@ -33,11 +34,9 @@ Window::Window() {
             this->isRunning = false;
         }
     SDL_Surface* tempSurface = IMG_Load("assets/images/logo/Lazerus.png");
-    SDL_Texture* spriteSheetTexture = SDL_CreateTextureFromSurface(WindowProperty::renderer, tempSurface);
+    spriteSheetTexture = SDL_CreateTextureFromSurface(WindowProperty::renderer, tempSurface);
     SDL_FreeSurface(tempSurface);
-    SDL_RenderClear(WindowProperty::renderer);
-    SDL_RenderCopy(WindowProperty::renderer,spriteSheetTexture,NULL,NULL);
-    SDL_RenderPresent(WindowProperty::renderer);
+
     }
     else{
         printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
@@ -74,7 +73,9 @@ void Window:: handleEvents() {
     Renders game assets to the screen
 */
 void Window:: render() {
-
+    SDL_RenderClear(WindowProperty::renderer);
+    SDL_RenderCopy(WindowProperty::renderer,spriteSheetTexture,NULL,NULL);
+    SDL_RenderPresent(WindowProperty::renderer);
 }
 /**
     Updates the game assets
