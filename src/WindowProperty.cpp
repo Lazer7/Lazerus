@@ -3,7 +3,7 @@
 #include "WindowProperty.h"
 
 // Static window properties
-const std::string WindowProperty::title="Platform Game";
+const std::string WindowProperty::title="Lazerus Game Engine";
 const int WindowProperty::WindowHeight = 600;
 const int WindowProperty::WindowWidth = 1000;
 WindowValue WindowProperty::windowValue;
@@ -11,7 +11,6 @@ SDL_Window* WindowProperty::window = NULL;
 SDL_Surface* WindowProperty::screen_surface = NULL;
 SDL_Renderer* WindowProperty::renderer = NULL;
 SDL_Event WindowProperty::event;
-
 
 
 /**
@@ -72,8 +71,8 @@ void WindowProperty::setWindowProperty(int w,int h,float Ws,float Hs, int FPS, b
 void WindowProperty::setDefaultWindowProperty() {
     WindowValue scale;
     scale.fullscreen=false;
-    scale.width=1000;
-    scale.height=600;
+    scale.width=WindowProperty::WindowWidth;
+    scale.height=WindowProperty::WindowHeight;
     scale.Wscale = 1;
     scale.Hscale = 1;
     scale.FPS = 60;
