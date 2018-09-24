@@ -33,7 +33,8 @@ Window::Window() {
             printf( "Something could not be created! SDL_Error: %s\n", SDL_GetError() );
             this->isRunning = false;
         }
-        this->loadingScreen();
+        int frameStart = SDL_GetTicks();
+        while( 2000>(SDL_GetTicks()-frameStart)&& isRunning)this->loadingScreen();
     }
     else{
         printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
@@ -59,7 +60,7 @@ void Window:: loadingScreen(){
     SDL_FreeSurface(tempSurface);
     SDL_RenderCopy(WindowProperty::renderer,spriteSheetTexture,NULL,NULL);
     SDL_RenderPresent(WindowProperty::renderer);
-    SDL_Delay(2000);
+    this->handleEvents();
 }
 
 /**
