@@ -2,7 +2,7 @@
 #define GAMEOBJECT_H
 #include <iostream>
 #include <string>
-#include "../components/ComponentManager.h"
+#include "components/ComponentManager.h"
 #include <typeinfo>
 /**
     Abstract Game Object class that will hold all components of a game object

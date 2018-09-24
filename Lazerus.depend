@@ -5,7 +5,7 @@
 1537395391 source:d:\code\c++ projects\lazerus\game_engine\src\vector2d.cpp
 	"Vector2D.h"
 
-1537754142 source:d:\code\c++ projects\lazerus\game_engine\src\window.cpp
+1537760027 source:d:\code\c++ projects\lazerus\game_engine\src\window.cpp
 	"Window.h"
 
 1537402114 source:d:\code\c++ projects\lazerus\game_engine\src\windowproperty.cpp
@@ -386,8 +386,9 @@
 	"begin_code.h"
 	"close_code.h"
 
-1537755692 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
+1537760566 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
 	"assetHandler.h"
+	"GameObject.h"
 
 1537755590 d:\code\c++ projects\lazerus\game\include\assethandler.h
 	<list>
@@ -415,7 +416,7 @@
 	"WindowProperty.h"
 	<math.h>
 
-1537755573 d:\code\c++ projects\lazerus\game_engine\include\components\spriterenderer.h
+1537760629 d:\code\c++ projects\lazerus\game_engine\include\components\spriterenderer.h
 	"Components.h"
 	"SDL_image.h"
 	"SDL.h"
@@ -424,4 +425,10 @@
 	<string>
 	<SDL.h>
 	"ComponentManager.h"
+
+1537759159 d:\code\c++ projects\lazerus\game_engine\include\gameobject.h
+	<iostream>
+	<string>
+	"components/ComponentManager.h"
+	<typeinfo>
 

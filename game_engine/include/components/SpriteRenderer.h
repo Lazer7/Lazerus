@@ -17,6 +17,7 @@ class SpriteRenderer : public Component
         SDL_Texture* spriteSheetTexture;
         // Animation variables
         bool animated = false;
+        int level = 0;
         int frames = 0;
         int speed = 100;
 
@@ -31,10 +32,11 @@ class SpriteRenderer : public Component
             this->srcWidth=srcWidth;
             this->srcHeight=srcHeight;
         };
-        SpriteRenderer(const char* spriteSheet,int srcWidth, int srcHeight, int frames, int speed){
+        SpriteRenderer(const char* spriteSheet,int srcWidth, int srcHeight,int level,int frames, int speed){
             setTexture(spriteSheet);
             this->srcWidth=srcWidth;
             this->srcHeight=srcHeight;
+            this->level = level;
             animated = true;
             this->frames = frames;
             speed = speed;
@@ -56,11 +58,12 @@ class SpriteRenderer : public Component
                 entity->addComponent<TransformComponent>();
             }
             transformer = &entity->getComponent<TransformComponent>();
-            srcRect.x = srcRect.y = 0;
-            srcRect.w = srcWidth;
-            srcRect.h = srcHeight;
-            destRect.w = transformer->width;
-            destRect.h = transformer->height;
+            this->srcRect.x = 0;
+            this->srcRect.y = this->srcHeight * this->level;
+            this->srcRect.w = srcWidth;
+            this->srcRect.h = srcHeight;
+            this->destRect.w = transformer->width;
+            this->destRect.h = transformer->height;
         }
         void update() override
         {
@@ -77,7 +80,10 @@ class SpriteRenderer : public Component
         {
             SDL_RenderCopy(WindowProperty::renderer,spriteSheetTexture,&srcRect,&destRect);
         }
-
+        void setLevel(int level){
+            this->level = level;
+            this->srcRect.y = this->srcHeight * this->level;
+        }
 };
 
 #endif // SPRITERENDERER_H
