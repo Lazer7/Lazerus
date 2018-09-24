@@ -35,6 +35,8 @@
 			<Add directory="D:/Code/C++ Projects/SDL2_image-2.0.3/i686-w64-mingw32/include/SDL2" />
 			<Add directory="game_engine/include" />
 			<Add directory="game_engine/src" />
+			<Add directory="game/include" />
+			<Add directory="game/src" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer" />
@@ -42,11 +44,21 @@
 			<Add directory="D:/Code/C++ Projects/SDL2_mixer-2.0.2/i686-w64-mingw32/lib" />
 			<Add directory="D:/Code/C++ Projects/SDL2_image-2.0.3/i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="game/include/assetHandler.h" />
+		<Unit filename="game/src/assetHandler.cpp" />
+		<Unit filename="game_engine/include/GameObject.h" />
+		<Unit filename="game_engine/include/Media.h" />
 		<Unit filename="game_engine/include/Vector2D.h" />
 		<Unit filename="game_engine/include/Window.h" />
 		<Unit filename="game_engine/include/WindowProperty.h" />
+		<Unit filename="game_engine/include/components/ColliderComponent.h" />
+		<Unit filename="game_engine/include/components/ComponentManager.h" />
+		<Unit filename="game_engine/include/components/Components.h" />
+		<Unit filename="game_engine/include/components/SpriteRenderer.h" />
+		<Unit filename="game_engine/include/components/TransformComponent.h" />
 		<Unit filename="game_engine/include/sha2.h" />
 		<Unit filename="game_engine/main.cpp" />
+		<Unit filename="game_engine/src/Media.cpp" />
 		<Unit filename="game_engine/src/Vector2D.cpp" />
 		<Unit filename="game_engine/src/Window.cpp" />
 		<Unit filename="game_engine/src/WindowProperty.cpp" />
