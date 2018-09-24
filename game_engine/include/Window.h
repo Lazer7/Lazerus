@@ -6,6 +6,7 @@
 #include <string>
 #include <SDL.h>
 #include <SDL_image.h>
+#include "assetHandler.h"
 #include "WindowProperty.h"
 
 
@@ -23,6 +24,7 @@ class Window
         void capFrameRate(int);
 
     private:
+        assetHandler asset;
         bool isRunning;
 };
 

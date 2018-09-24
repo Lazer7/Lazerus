@@ -5,19 +5,20 @@
 1537395391 source:d:\code\c++ projects\lazerus\game_engine\src\vector2d.cpp
 	"Vector2D.h"
 
-1537754049 source:d:\code\c++ projects\lazerus\game_engine\src\window.cpp
+1537754142 source:d:\code\c++ projects\lazerus\game_engine\src\window.cpp
 	"Window.h"
 
 1537402114 source:d:\code\c++ projects\lazerus\game_engine\src\windowproperty.cpp
 	"WindowProperty.h"
 	"WindowProperty.h"
 
-1537338915 d:\code\c++ projects\lazerus\game_engine\include\window.h
+1537755797 d:\code\c++ projects\lazerus\game_engine\include\window.h
 	<iostream>
 	<stdio.h>
 	<string>
 	<SDL.h>
 	<SDL_image.h>
+	"assetHandler.h"
 	"WindowProperty.h"
 
 1519925811 d:\code\c++ projects\sdl2-2.0.8\i686-w64-mingw32\include\sdl2\sdl.h
@@ -368,4 +369,59 @@
 
 1537394495 d:\code\c++ projects\lazerus\game_engine\include\vector2d.h
 	<iostream>
+
+1534805626 source:d:\code\c++ projects\lazerus\game_engine\src\media.cpp
+	"Media.h"
+
+1529035534 d:\code\c++ projects\lazerus\game_engine\include\media.h
+	<stdio.h>
+	<SDL_mixer.h>
+
+1508776368 d:\code\c++ projects\sdl2_mixer-2.0.2\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1537755692 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
+	"assetHandler.h"
+
+1537755590 d:\code\c++ projects\lazerus\game\include\assethandler.h
+	<list>
+	<components/Components.h>
+	"Media.h"
+	"WindowProperty.h"
+
+1528528651 d:\code\c++ projects\lazerus\game_engine\include\components\components.h
+	"ComponentManager.h"
+	"TransformComponent.h"
+	"SpriteRenderer.h"
+	"ColliderComponent.h"
+
+1530652818 d:\code\c++ projects\lazerus\game_engine\include\components\componentmanager.h
+	<iostream>
+	<vector>
+	<memory>
+	<algorithm>
+	<bitset>
+	<array>
+
+1537755558 d:\code\c++ projects\lazerus\game_engine\include\components\transformcomponent.h
+	"../include/Vector2D.h"
+	<iostream>
+	"WindowProperty.h"
+	<math.h>
+
+1537755573 d:\code\c++ projects\lazerus\game_engine\include\components\spriterenderer.h
+	"Components.h"
+	"SDL_image.h"
+	"SDL.h"
+
+1530049498 d:\code\c++ projects\lazerus\game_engine\include\components\collidercomponent.h
+	<string>
+	<SDL.h>
+	"ComponentManager.h"
 

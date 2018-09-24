@@ -35,6 +35,7 @@ Window::Window() {
         }
         int frameStart = SDL_GetTicks();
         while( 2000>(SDL_GetTicks()-frameStart)&& isRunning)this->loadingScreen();
+        asset.init();
     }
     else{
         printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
@@ -74,6 +75,7 @@ void Window:: handleEvents() {
             break;
         default:
             WindowProperty::resizeWindowEvent();
+            asset.keyEventHandler();
             break;
     }
 }
@@ -82,12 +84,14 @@ void Window:: handleEvents() {
 */
 void Window:: render() {
     SDL_RenderClear(WindowProperty::renderer);
+    asset.render();
     SDL_RenderPresent(WindowProperty::renderer);
 }
 /**
     Updates the game assets
 */
 void Window:: update() {
+    asset.update();
 }
 /**
     Caps the Game Frame Rate
