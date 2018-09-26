@@ -1,5 +1,5 @@
 <p align="center">
-<img width="500" height="500" src="assets/images/logo/lazerus-logo.png">
+<img width="250" height="250" src="assets/images/logo/lazerus-logo.png">
 </p>
 
 # Lazerus
