@@ -41,7 +41,9 @@ Please Download the following files for SDL2
 # Linux Set Up (Ubuntu)
 Welcome if you are an ascended being and are using Linux, Okay... As a reminder this set up is using Code::Blocks IDE that you can download using
 > sudo apt install codeblocks
+
 To download SDL2 files use this 
+
 > sudo apt-get install libsdl2-dev
 1. Open up the lazerus project folder by clicking on on Lazerus.cbp
 2. Go to Project >> Properties then click on Project build options...
