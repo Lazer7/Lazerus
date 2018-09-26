@@ -53,3 +53,4 @@ To download SDL2 files use this
 > Have g++ follow the C++11 ISO C++ language standard [-std=c++11]
 5. Go through every file and replace SDL.h, SDL_Mixer.h, SDL_Image.h and add SDL2/ in front to make it look like this
 #include <SDL2/SDL.h>  or #include <SDL2/SDL_Image.h> or #include <SDL2/SDL_Mixer.h>
+6. Press okay for all settings and you can now run the files
