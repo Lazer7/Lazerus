@@ -1,15 +1,14 @@
 # depslib dependency file v1.0
-1537312159 source:d:\code\c++ projects\lazerus\game_engine\main.cpp
+1538448382 source:d:\code\c++ projects\lazerus\game_engine\main.cpp
 	"Window.h"
 
 1537395391 source:d:\code\c++ projects\lazerus\game_engine\src\vector2d.cpp
 	"Vector2D.h"
 
-1537839459 source:d:\code\c++ projects\lazerus\game_engine\src\window.cpp
+1538000836 source:d:\code\c++ projects\lazerus\game_engine\src\window.cpp
 	"Window.h"
 
-1537402114 source:d:\code\c++ projects\lazerus\game_engine\src\windowproperty.cpp
-	"WindowProperty.h"
+1538607982 source:d:\code\c++ projects\lazerus\game_engine\src\windowproperty.cpp
 	"WindowProperty.h"
 
 1537755797 d:\code\c++ projects\lazerus\game_engine\include\window.h
@@ -361,10 +360,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1537835087 d:\code\c++ projects\lazerus\game_engine\include\windowproperty.h
+1538606922 d:\code\c++ projects\lazerus\game_engine\include\windowproperty.h
 	<iostream>
 	<fstream>
 	<string>
+	"FileManager.h"
 	<SDL.h>
 
 1537394495 d:\code\c++ projects\lazerus\game_engine\include\vector2d.h
@@ -386,10 +386,8 @@
 	"begin_code.h"
 	"close_code.h"
 
-1537840234 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
+1538607275 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
 	"assetHandler.h"
-	"GameObject.h"
-	<iostream>
 
 1537755590 d:\code\c++ projects\lazerus\game\include\assethandler.h
 	<list>
@@ -417,11 +415,10 @@
 	"WindowProperty.h"
 	<math.h>
 
-1538000561 d:\code\c++ projects\lazerus\game_engine\include\components\spriterenderer.h
+1538001204 d:\code\c++ projects\lazerus\game_engine\include\components\spriterenderer.h
 	"Components.h"
 	"SDL_image.h"
 	"SDL.h"
-	<iostream>
 
 1530049498 d:\code\c++ projects\lazerus\game_engine\include\components\collidercomponent.h
 	<string>
@@ -433,4 +430,18 @@
 	<string>
 	"components/ComponentManager.h"
 	<typeinfo>
+
+1538607940 d:\code\c++ projects\lazerus\game_engine\include\filemanager.h
+	<string>
+	<sha2.h>
+
+1537327419 d:\code\c++ projects\lazerus\game_engine\include\sha2.h
+	<algorithm>
+	<cassert>
+	<iterator>
+	<sstream>
+	<vector>
+	<fstream>
+
+1538607925 source:d:\code\c++ projects\lazerus\game_engine\src\filemanager.cpp
 

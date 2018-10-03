@@ -1,7 +1,5 @@
 #include "WindowProperty.h"
 
-#include "WindowProperty.h"
-
 // Static window properties
 const std::string WindowProperty::title="Lazerus Game Engine";
 const int WindowProperty::WindowHeight = 500;
@@ -17,40 +15,21 @@ SDL_Event WindowProperty::event;
     Initialize Window settings from the WindowScreen.dat file
 */
 bool WindowProperty::init() {
-    WindowValue scale;
-    std::ifstream data("data/WindowScreen.dat",std::ios::binary);
-    // checks if file exist
-    if(data.is_open()) {
-        data.read((char *) &scale,sizeof(scale));
-        windowValue=scale;
-        return true;
-    }
-    // If not initialize with default data
-    else {
-        setDefaultWindowProperty();
-        std::ifstream data("data/WindowScreen.dat",std::ios::binary);
-        if(data.is_open()){
-            data.read((char *) &scale,sizeof(scale));
-        }
-        return true;
 
+    try{
+        windowValue=FileManager::read<WindowValue>("data/WindowScreen.dat");
     }
-    data.close();
-    return false;
+    catch(const char* msg){
+        setDefaultWindowProperty();
+    }
+    return true;
 }
 /**
     Set Window Properties with scale values
 */
 void WindowProperty::setWindowProperty(WindowValue scale) {
-    remove("data/WindowScreen.dat");
-    std::ofstream out("data/WindowScreen.dat",std::ios::binary);
-    out.write((char*) &scale, sizeof(scale));
-//    int attributes = GetFileAttributes("data/WindowScreen.dat");
-//    if((attributes & FILE_ATTRIBUTE_HIDDEN)==0) {
-//        SetFileAttributes("data/WindowScreen.dat", attributes + FILE_ATTRIBUTE_HIDDEN);
-//    }
+    FileManager::write("data/WindowScreen.dat",scale);
     windowValue=scale;
-    out.close();
 }
 /**
     Set Window Properties with scale values
