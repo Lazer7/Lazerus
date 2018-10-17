@@ -30,19 +30,21 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="D:/Code/C++ Projects/SDL2-2.0.8/i686-w64-mingw32/include/SDL2" />
-			<Add directory="D:/Code/C++ Projects/SDL2_mixer-2.0.2/i686-w64-mingw32/include/SDL2" />
-			<Add directory="D:/Code/C++ Projects/SDL2_image-2.0.3/i686-w64-mingw32/include/SDL2" />
 			<Add directory="game_engine/include" />
 			<Add directory="game_engine/src" />
 			<Add directory="game/include" />
 			<Add directory="game/src" />
+			<Add directory="game_engine/external_libraries/SDL2_image-2.0.3/include/SDL2" />
+			<Add directory="game_engine/external_libraries/SDL2_mixer-2.0.2/include/SDL2" />
+			<Add directory="game_engine/external_libraries/SDL2_ttf-2.0.14/include/SDL2" />
+			<Add directory="game_engine/external_libraries/SDL2-2.0.8/include/SDL2" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer" />
-			<Add directory="D:/Code/C++ Projects/SDL2-2.0.8/i686-w64-mingw32/lib" />
-			<Add directory="D:/Code/C++ Projects/SDL2_mixer-2.0.2/i686-w64-mingw32/lib" />
-			<Add directory="D:/Code/C++ Projects/SDL2_image-2.0.3/i686-w64-mingw32/lib" />
+			<Add directory="game_engine/external_libraries/SDL2_image-2.0.3/lib" />
+			<Add directory="game_engine/external_libraries/SDL2_mixer-2.0.2/lib" />
+			<Add directory="game_engine/external_libraries/SDL2_ttf-2.0.14/lib" />
+			<Add directory="game_engine/external_libraries/SDL2-2.0.8/lib" />
 		</Linker>
 		<Unit filename="game/include/assetHandler.h" />
 		<Unit filename="game/src/assetHandler.cpp" />
