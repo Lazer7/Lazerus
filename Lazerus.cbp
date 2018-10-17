@@ -40,7 +40,7 @@
 			<Add directory="game_engine/external_libraries/SDL2-2.0.8/include/SDL2" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer" />
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" />
 			<Add directory="game_engine/external_libraries/SDL2_image-2.0.3/lib" />
 			<Add directory="game_engine/external_libraries/SDL2_mixer-2.0.2/lib" />
 			<Add directory="game_engine/external_libraries/SDL2_ttf-2.0.14/lib" />
