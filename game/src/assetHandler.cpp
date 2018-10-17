@@ -5,8 +5,7 @@
     TODO:: Refactor to place all characters in a vector
 */
 void assetHandler::init(){
-    music.init("assets/audio/Blessing.mp3");
-    music.play();
+
 }
 /**
     Update function to call each asset's update function
