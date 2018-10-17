@@ -4,8 +4,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "assetHandler.h"
 #include "WindowProperty.h"
 

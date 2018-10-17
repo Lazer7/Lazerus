@@ -1,7 +1,7 @@
 #ifndef COLLIDERCOMPONENT_H
 #define COLLIDERCOMPONENT_H
 #include <string>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "ComponentManager.h"
 
 class ColliderComponent : public Component{
