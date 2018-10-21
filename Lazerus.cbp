@@ -45,6 +45,19 @@
 		</Linker>
 		<Unit filename="game/include/assetHandler.h" />
 		<Unit filename="game/src/assetHandler.cpp" />
+		<Unit filename="game_engine/external_libraries/GUI/kiss_draw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/GUI/kiss_general.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/GUI/kiss_posix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/GUI/kiss_sdl.h" />
+		<Unit filename="game_engine/external_libraries/GUI/kiss_widgets.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="game_engine/include/GameObject.h" />
 		<Unit filename="game_engine/include/Media.h" />
 		<Unit filename="game_engine/include/Vector2D.h" />

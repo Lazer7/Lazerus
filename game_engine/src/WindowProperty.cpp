@@ -1,11 +1,12 @@
 #include "WindowProperty.h"
 
 // Static window properties
-const std::string WindowProperty::title="Lazerus Game Engine";
+char* WindowProperty::title="Lazerus Game Engine";
 const int WindowProperty::WindowHeight = 500;
 const int WindowProperty::WindowWidth = 500;
+kiss_window WindowProperty::window;
+kiss_array WindowProperty::objects;
 WindowValue WindowProperty::windowValue;
-SDL_Window* WindowProperty::window = NULL;
 SDL_Surface* WindowProperty::screen_surface = NULL;
 SDL_Renderer* WindowProperty::renderer = NULL;
 SDL_Event WindowProperty::event;
@@ -65,8 +66,16 @@ void WindowProperty::resizeWindowEvent() {
         switch(event.window.event){
         case SDL_WINDOWEVENT_SIZE_CHANGED:
             if(event.window.data1 < WindowProperty::WindowWidth || event.window.data2 < WindowProperty::WindowHeight) {
+                kiss_array_new(&WindowProperty::objects);
                 WindowProperty::setDefaultWindowProperty();
-                SDL_SetWindowSize(window,WindowProperty::WindowWidth,WindowProperty::WindowHeight);
+                //SDL_SetWindowSize(window,WindowProperty::WindowWidth,WindowProperty::WindowHeight);
+                WindowProperty::renderer = kiss_init(title, &objects,500 ,500);
+                kiss_window_new(&WindowProperty::window, NULL, 0,
+                    SDL_WINDOWPOS_UNDEFINED,
+                    SDL_WINDOWPOS_UNDEFINED,
+                    WindowProperty::WindowWidth,
+                    WindowProperty::WindowHeight);
+
             }
             else{
                 float wScale = (float)(event.window.data1) / (float)WindowProperty::WindowWidth;

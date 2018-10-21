@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "GUI/kiss_sdl.h"
 int cnt=0;
 
 /**
@@ -12,27 +13,23 @@ Window::Window() {
     if( SDL_Init(SDL_INIT_EVERYTHING) == 0 && WindowProperty::init()){
         // Set flag to notify the system is running
         this->isRunning=true;
+        kiss_array_new(&WindowProperty::objects);
         // Creates the window
-        WindowProperty::window = SDL_CreateWindow( WindowProperty::title.c_str(),
-                                                     SDL_WINDOWPOS_UNDEFINED,
-                                                     SDL_WINDOWPOS_UNDEFINED,
-                                                     WindowProperty::windowValue.width,
-                                                     WindowProperty::windowValue.height,
-                                                     SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE );
-        SDL_Surface *surface;     // Declare an SDL_Surface to be filled in with pixel data from an image file
-        surface = IMG_Load("assets/logo.png");
-        SDL_SetWindowIcon(WindowProperty::window, surface);
-        SDL_FreeSurface(surface);
-        WindowProperty::renderer = SDL_CreateRenderer(WindowProperty::window, -1 ,0);
-        if( WindowProperty::window != NULL && WindowProperty::renderer != NULL){
+        kiss_window_new(&WindowProperty::window, NULL, 0,
+                    SDL_WINDOWPOS_UNDEFINED,
+                    SDL_WINDOWPOS_UNDEFINED,
+                    WindowProperty::WindowWidth,
+                    WindowProperty::WindowHeight);
+        WindowProperty::renderer = kiss_init(WindowProperty::title,&WindowProperty::objects,WindowProperty::WindowWidth,
+                    WindowProperty::WindowHeight);
+        //SDL_Surface *surface;     // Declare an SDL_Surface to be filled in with pixel data from an image file
+        //surface = IMG_Load("assets/logo.png");
+        //SDL_SetWindowIcon(WindowProperty::window, surface);
+        //SDL_FreeSurface(surface);
+        //WindowProperty::renderer = SDL_CreateRenderer(WindowProperty::window, -1 ,0);
+
             // Set background to white
-            SDL_SetRenderDrawColor(WindowProperty::renderer,255,255,255,255);
-        }
-        else{
-            // Error has occurred stop systems
-            printf( "Something could not be created! SDL_Error: %s\n", SDL_GetError() );
-            this->isRunning = false;
-        }
+        SDL_SetRenderDrawColor(WindowProperty::renderer,255,255,255,255);
         int frameStart = SDL_GetTicks();
         while( 2000>(SDL_GetTicks()-frameStart)&& isRunning)this->loadingScreen();
         asset.init();
@@ -45,9 +42,8 @@ Window::Window() {
 }
 Window::~Window() {
     //Destroy window
-    SDL_DestroyRenderer( WindowProperty::renderer );
-    SDL_DestroyWindow( WindowProperty::window );
-    WindowProperty::window = NULL;
+    kiss_clean(&WindowProperty::objects);
+//    WindowProperty::window = NULL;
     WindowProperty::renderer = NULL;
     //Quit SDL subsystems
     IMG_Quit();
@@ -63,12 +59,14 @@ void Window:: loadingScreen(){
     SDL_RenderPresent(WindowProperty::renderer);
     this->handleEvents();
 }
-
+   int draw = 1;
 /**
     Handles any input or outputs that occurs in the window
 */
 void Window:: handleEvents() {
     SDL_PollEvent(&WindowProperty::event);
+
+    kiss_window_event(&WindowProperty::window, &WindowProperty::event, &draw);
     switch(WindowProperty::event.type){
         case SDL_QUIT:
             isRunning=false;
@@ -84,6 +82,7 @@ void Window:: handleEvents() {
 */
 void Window:: render() {
     SDL_RenderClear(WindowProperty::renderer);
+    kiss_window_draw(&WindowProperty::window, WindowProperty::renderer);
     asset.render();
     SDL_RenderPresent(WindowProperty::renderer);
 }

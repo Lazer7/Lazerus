@@ -1,11 +1,13 @@
 #ifndef WINDOWPROPERTY_H
 #define WINDOWPROPERTY_H
 
+#include "GUI/kiss_sdl.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include "FileManager.h"
 #include <SDL2/SDL.h>
+
 class WindowValue{
     public:
         int width;
@@ -19,15 +21,17 @@ class WindowProperty
 {
     public:
 
-        static SDL_Window* window;
+        //static SDL_Window* window;
         static SDL_Surface* screen_surface;
         static SDL_Renderer* renderer;
         static SDL_Event event;
+        static kiss_array objects;
+        static kiss_window window;
 
         static WindowValue windowValue;
         static const int WindowHeight;
         static const int WindowWidth;
-        static const std::string title;
+        static char* title;
 
         static bool init();
         static void setDefaultWindowProperty();
@@ -36,6 +40,9 @@ class WindowProperty
         static void resizeWindowEvent();
         static float getWidthDisposition();
         static float getHeightDisposition();
+
+
+
 };
 
 #endif // WINDOWPROPERTY_H
