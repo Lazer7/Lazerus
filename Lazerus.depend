@@ -388,8 +388,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1540193887 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
+1540197301 source:d:\code\c++ projects\lazerus\game\src\assethandler.cpp
 	"assetHandler.h"
+	"list"
+	"PlayableCharacter.h"
 
 1540186987 d:\code\c++ projects\lazerus\game\include\assethandler.h
 	<list>
@@ -422,12 +424,13 @@
 	"SDL2/SDL_image.h"
 	"SDL2/SDL.h"
 
-1539814597 d:\code\c++ projects\lazerus\game_engine\include\components\collidercomponent.h
+1540196077 d:\code\c++ projects\lazerus\game_engine\include\components\collidercomponent.h
 	<string>
 	<SDL2/SDL.h>
-	"ComponentManager.h"
+	"components/ComponentManager.h"
+	"components/Components.h"
 
-1537839674 d:\code\c++ projects\lazerus\game_engine\include\gameobject.h
+1538001196 d:\code\c++ projects\lazerus\game_engine\include\gameobject.h
 	<iostream>
 	<string>
 	"components/ComponentManager.h"
@@ -1181,4 +1184,13 @@
 
 1540171991 source:d:\code\c++ projects\lazerus\game_engine\external_libraries\gui\kiss_widgets.c
 	"kiss_sdl.h"
+
+1540197123 source:d:\code\c++ projects\lazerus\game\src\playablecharacter.cpp
+	"PlayableCharacter.h"
+
+1540196801 d:\code\c++ projects\lazerus\game\include\playablecharacter.h
+	"GameObject.h"
+	"WindowProperty.h"
+	"components/ColliderComponent.h"
+	<iostream>
 

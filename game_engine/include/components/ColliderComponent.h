@@ -2,7 +2,8 @@
 #define COLLIDERCOMPONENT_H
 #include <string>
 #include <SDL2/SDL.h>
-#include "ComponentManager.h"
+#include "components/ComponentManager.h"
+#include "components/Components.h"
 
 class ColliderComponent : public Component{
     public:
