@@ -25,7 +25,7 @@ class Window
         void capFrameRate(int);
         void stop(){WindowProperty::isRunning = false;}
     private:
-        assetHandler asset;
+        AssetHandler asset;
 };
 
 #endif // WINDOW_H
