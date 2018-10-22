@@ -83,7 +83,7 @@ int kiss_renderimage(SDL_Renderer *renderer, kiss_image image,
 	kiss_makerect(&dst, x, y, image.w, image.h);
 	if (clip) dst.w = clip->w;
 	if (clip) dst.h = clip->h;
-	printf("destination %d %d\n", dst.h, dst.w);
+
 	SDL_RenderCopy(renderer, image.image, clip, &dst);
 	return 0;
 }
@@ -97,7 +97,6 @@ int kiss_renderimage_precise(SDL_Renderer *renderer, kiss_image image,
 	kiss_makerect(&src, 0,0, image.w,image.h);
 	kiss_makerect(&dst, x, y, w, h);
 
-	printf("destination %d %d\n", dst.h, dst.w);
 	SDL_RenderCopy(renderer, image.image, &src, &dst);
 	return 0;
 }
@@ -183,9 +182,8 @@ int kiss_font_new(kiss_font *font, char *fname, kiss_array *a, int size)
 	return 0;
 }
 
-SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
+SDL_Renderer* kiss_init(SDL_Window *window, kiss_array *a, int w, int h)
 {
-	SDL_Window *window;
 	SDL_Renderer *renderer;
 	SDL_Rect srect;
 	int r;
@@ -202,9 +200,8 @@ SDL_Renderer* kiss_init(char* title, kiss_array *a, int w, int h)
 	IMG_Init(IMG_INIT_PNG);
 	TTF_Init();
 	kiss_array_new(a);
-	window = SDL_CreateWindow(title, srect.w / 2 - w / 2,
-		srect.h / 2 - h / 2, w, h, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
+    printf("%d\n", window);
 	if (window) kiss_array_append(a, WINDOW_TYPE, window);
 	renderer = SDL_CreateRenderer(window, -1,
 		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);

@@ -24,7 +24,7 @@
 
 #include "kiss_sdl.h"
 
-int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate,
+int kiss_window_new(kiss_window *window,char* title, kiss_window *wdw, int decorate,
 	int x, int y, int w, int h)
 {
 	if (!window) return -1;
@@ -33,7 +33,17 @@ int kiss_window_new(kiss_window *window, kiss_window *wdw, int decorate,
 	window->decorate = decorate;
 	window->visible = 0;
 	window->focus = 1;
-	window->wdw = wdw;
+    SDL_Rect srect;
+	SDL_GetDisplayBounds(0, &srect);
+	if(title!=NULL){
+        window->wdw = wdw;
+        window->window= SDL_CreateWindow(title, srect.w / 2 - w / 2,
+            srect.h / 2 - h / 2, w, h, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+        SDL_Surface *surface;     // Declare an SDL_Surface to be filled in with pixel data from an image file
+        surface = IMG_Load("assets/images/logo/logo.png");
+        SDL_SetWindowIcon(window->window, surface);
+        SDL_FreeSurface(surface);
+	}
 	return 0;
 }
 
@@ -781,7 +791,7 @@ int kiss_combobox_new(kiss_combobox *combobox, kiss_window *wdw,
 		combobox->combo = kiss_combo;
 	kiss_entry_new(&combobox->entry, wdw, 1, text, x, y, w);
 	strcpy(combobox->text, combobox->entry.text);
-	kiss_window_new(&combobox->window, NULL, 0, x,
+	kiss_window_new(&combobox->window,NULL, NULL, 0, x,
 		y + combobox->entry.rect.h, w +
 		combobox->vscrollbar.up.w, h);
 	if (kiss_textbox_new(&combobox->textbox, &combobox->window, 1,

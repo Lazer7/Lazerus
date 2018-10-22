@@ -19,13 +19,12 @@ class Window
         void handleEvents();
         void render();
         void update();
-        bool running(){return isRunning;}
+        bool running(){return WindowProperty::isRunning;}
         void loadMedia(std:: string);
         void capFrameRate(int);
-
+        void stop(){WindowProperty::isRunning = false;}
     private:
         assetHandler asset;
-        bool isRunning;
 };
 
 #endif // WINDOW_H

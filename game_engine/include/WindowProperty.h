@@ -27,11 +27,12 @@ class WindowProperty
         static SDL_Event event;
         static kiss_array objects;
         static kiss_window window;
+        static bool isRunning;
 
         static WindowValue windowValue;
         static const int WindowHeight;
         static const int WindowWidth;
-        static char* title;
+        static std::string title;
 
         static bool init();
         static void setDefaultWindowProperty();
