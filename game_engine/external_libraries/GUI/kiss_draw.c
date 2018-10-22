@@ -201,7 +201,6 @@ SDL_Renderer* kiss_init(SDL_Window *window, kiss_array *a, int w, int h)
 	TTF_Init();
 	kiss_array_new(a);
 
-    printf("%d\n", window);
 	if (window) kiss_array_append(a, WINDOW_TYPE, window);
 	renderer = SDL_CreateRenderer(window, -1,
 		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);

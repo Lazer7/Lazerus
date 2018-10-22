@@ -61,8 +61,7 @@ void assetHandler::keyEventHandler(){
     }
 }
 
-void assetHandler::button_event(kiss_button *button, SDL_Event *e, int *draw,
-                  int *quit)
+void assetHandler::button_event(kiss_button *button, SDL_Event *e, int *draw, int *quit)
 {
     if (kiss_button_event(button, e, draw)){
         PlayableCharacter ahri;

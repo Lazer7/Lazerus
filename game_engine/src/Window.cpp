@@ -97,7 +97,7 @@ void Window:: capFrameRate(int frameStart) {
     int FPS = WindowProperty::windowValue.FPS;
     int frameTime = SDL_GetTicks() - frameStart;
 
-    //printf("Frame Started %d\n", cnt );
+    printf("Frame Started %d\n", cnt );
     cnt++;
     if((1000/FPS)> frameTime){
         SDL_Delay((1000/FPS) - frameTime);
