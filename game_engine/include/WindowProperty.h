@@ -7,7 +7,7 @@
 #include <string>
 #include "FileManager.h"
 #include <SDL2/SDL.h>
-
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 class WindowValue{
     public:
         int width;
@@ -20,15 +20,19 @@ class WindowValue{
 class WindowProperty
 {
     public:
-
-        //static SDL_Window* window;
+        // SDL Resources
         static SDL_Surface* screen_surface;
         static SDL_Renderer* renderer;
         static SDL_Event event;
+
+        // KISS GUI Resources
         static kiss_array objects;
         static kiss_window window;
+
+        // Checking if program is still alive
         static bool isRunning;
 
+        // Window Property Values
         static WindowValue windowValue;
         static const int WindowHeight;
         static const int WindowWidth;

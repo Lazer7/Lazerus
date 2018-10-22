@@ -6,10 +6,11 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "assetHandler.h"
+#include "AssetHandler.h"
 #include "WindowProperty.h"
+#include "GUI/kiss_sdl.h"
 
-
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 class Window
 {
     public:

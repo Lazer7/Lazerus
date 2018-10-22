@@ -4,8 +4,10 @@
 #include <string>
 #include "components/ComponentManager.h"
 #include <typeinfo>
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
+
 /**
-    Abstract Game Object class that will hold all components of a game object
+*  Abstract Game Object class that will hold all components of a game object
 */
 class GameObject
 {

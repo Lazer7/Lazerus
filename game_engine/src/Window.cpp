@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "GUI/kiss_sdl.h"
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 int cnt=0;
 int draw = 1;
 /**
@@ -16,18 +16,23 @@ Window::Window() {
         strcpy(cTitle,WindowProperty::title.c_str());
         kiss_array_new(&WindowProperty::objects);
 
-        // Creates the window
+        // Creates the window using KISS Library
         kiss_window_new(&WindowProperty::window,cTitle, NULL, 0,
                     SDL_WINDOWPOS_UNDEFINED,
                     SDL_WINDOWPOS_UNDEFINED,
                     WindowProperty::windowValue.width,
                     WindowProperty::windowValue.height);
-        WindowProperty::renderer = kiss_init(WindowProperty::window.window,&WindowProperty::objects,WindowProperty::windowValue.width,
-        WindowProperty::windowValue.height);
+        // Creates the renderer
+        WindowProperty::renderer = kiss_init(WindowProperty::window.window,
+                                             &WindowProperty::objects,
+                                             WindowProperty::windowValue.width,
+                                             WindowProperty::windowValue.height);
+        // Sets the Window to be visible on the user screen
         WindowProperty::window.visible=1;
         // Set background to white
         SDL_SetRenderDrawColor(WindowProperty::renderer,255,255,255,255);
         int frameStart = SDL_GetTicks();
+        // Load Loading Screen
         while( 2000>(SDL_GetTicks()-frameStart)&& WindowProperty::isRunning)this->loadingScreen();
         asset.init();
     }
@@ -37,6 +42,11 @@ Window::Window() {
     }
 
 }
+
+/**
+* Window's Deconstructor
+* Free up all KISS and SDL Libraries
+*/
 Window::~Window() {
     //Destroy window
     kiss_clean(&WindowProperty::objects);
@@ -46,7 +56,9 @@ Window::~Window() {
     IMG_Quit();
     SDL_Quit();
 }
-
+/**
+* Displays the Loading Screen
+*/
 void Window:: loadingScreen(){
     SDL_RenderClear(WindowProperty::renderer);
     SDL_Surface* tempSurface = IMG_Load("assets/images/logo/logo.png");

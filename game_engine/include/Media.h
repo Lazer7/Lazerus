@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <SDL2/SDL_mixer.h>
-
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 class Media
 {
     public:

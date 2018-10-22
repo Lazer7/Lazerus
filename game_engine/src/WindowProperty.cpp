@@ -1,5 +1,5 @@
 #include "WindowProperty.h"
-
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 // Static window properties
 std::string WindowProperty::title="Lazerus Game Engine";
 const int WindowProperty::WindowHeight = 500;
