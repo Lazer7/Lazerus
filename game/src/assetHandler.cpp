@@ -1,32 +1,31 @@
 #include "assetHandler.h"
 kiss_button button ={0};
-kiss_textbox textbox1 = {0};
-int textbox_width, textbox_height;
-kiss_array a1;
-kiss_window window1;
+kiss_label label ={0};
+
+int i = 4;
 /**
     Initializes all Assets in the Game
     TODO:: Refactor to place all characters in a vector
 */
 void assetHandler::init(){
-	textbox_width = 250;
-	textbox_height = 250;
-	kiss_array_new(&a1);
-    kiss_array_append(&WindowProperty::objects, ARRAY_TYPE, &a1);
+    char* message = "HELLO";
+    kiss_label_new(&label,&WindowProperty::window,message,0,0);
+    kiss_button_new(&button,&WindowProperty::window, "CRASH!",200,200,100,50);
     button.font.font=TTF_OpenFont( "assets/fonts/standard.ttf", 30 );
-    kiss_button_new(&button, &WindowProperty::window, "HELLO",300,200,200,100);
-    kiss_window_new(&window1, NULL, NULL, 1, 0, 0, 100,100);
-    kiss_textbox_new(&textbox1, &window1, 1, &a1, 50, 50,textbox_width, textbox_height);
-    window1.visible = 1;
+
 }
 /**
     Update function to call each asset's update function
 */
 void assetHandler::update(){
-    button.rect.h =  100*WindowProperty::getHeightDisposition();
-    button.rect.w = 200*WindowProperty::getWidthDisposition();
-    //printf("%d %d", button.rect.h,button.rect.w);
-
+    button.rect.h =  50*WindowProperty::getHeightDisposition();
+    button.rect.w = 100*WindowProperty::getWidthDisposition();
+    button.rect.x = 200*WindowProperty::getWidthDisposition();
+    button.rect.y = 200*WindowProperty::getHeightDisposition();
+    button.textx = 220 *WindowProperty::getWidthDisposition();
+    button.texty = 220 *WindowProperty::getHeightDisposition();
+    label.text[i]='a';
+    i++;
 }
 /**
     Render function to draw the game object to the screen
@@ -34,7 +33,8 @@ void assetHandler::update(){
 
 void assetHandler::render(){
     kiss_button_draw(&button, WindowProperty::renderer);
-    kiss_textbox_draw(&textbox1, WindowProperty::renderer);
+    kiss_label_draw(&label,WindowProperty::renderer);
+
 }
 /**
     Handles Key Events for game objects
