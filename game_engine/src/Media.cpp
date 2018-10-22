@@ -1,4 +1,5 @@
 #include "Media.h"
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 // Audio settings
 int audio_rate = 22050;
 Uint16 audio_format = AUDIO_S16SYS;
@@ -7,7 +8,6 @@ int audio_channels = 2;
     Media Player Deconstructor
 */
 Media::~Media() {
-    //dtor
     Mix_FreeMusic(Music);
     Music=NULL;
     Mix_Quit();

@@ -6,10 +6,11 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "assetHandler.h"
+#include "AssetHandler.h"
 #include "WindowProperty.h"
+#include "GUI/kiss_sdl.h"
 
-
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 class Window
 {
     public:
@@ -19,13 +20,12 @@ class Window
         void handleEvents();
         void render();
         void update();
-        bool running(){return isRunning;}
+        bool running(){return WindowProperty::isRunning;}
         void loadMedia(std:: string);
         void capFrameRate(int);
-
+        void stop(){WindowProperty::isRunning = false;}
     private:
         assetHandler asset;
-        bool isRunning;
 };
 
 #endif // WINDOW_H

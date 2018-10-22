@@ -1,7 +1,7 @@
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
 #include <string>
-#include <sha2.h>
+#include <SHA/sha2.h>
 class FileManager
 {
 public:

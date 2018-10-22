@@ -1,11 +1,13 @@
 #include "WindowProperty.h"
-
+/** Made by the singular entity known as Lazer (Github:Lazer7) */
 // Static window properties
-const std::string WindowProperty::title="Lazerus Game Engine";
+std::string WindowProperty::title="Lazerus Game Engine";
 const int WindowProperty::WindowHeight = 500;
 const int WindowProperty::WindowWidth = 500;
+bool WindowProperty::isRunning = false;
+kiss_window WindowProperty::window = {0};
+kiss_array WindowProperty::objects= {0};
 WindowValue WindowProperty::windowValue;
-SDL_Window* WindowProperty::window = NULL;
 SDL_Surface* WindowProperty::screen_surface = NULL;
 SDL_Renderer* WindowProperty::renderer = NULL;
 SDL_Event WindowProperty::event;
@@ -22,7 +24,7 @@ bool WindowProperty::init() {
     catch(const char* msg){
         setDefaultWindowProperty();
     }
-    return true;
+    return isRunning=true;
 }
 /**
     Set Window Properties with scale values
@@ -30,6 +32,7 @@ bool WindowProperty::init() {
 void WindowProperty::setWindowProperty(WindowValue scale) {
     FileManager::write("data/WindowScreen.dat",scale);
     windowValue=scale;
+    printf("WINDOW VALUES %d %d\n",windowValue.height, windowValue.width);
 }
 /**
     Set Window Properties with scale values
@@ -65,8 +68,11 @@ void WindowProperty::resizeWindowEvent() {
         switch(event.window.event){
         case SDL_WINDOWEVENT_SIZE_CHANGED:
             if(event.window.data1 < WindowProperty::WindowWidth || event.window.data2 < WindowProperty::WindowHeight) {
+                kiss_array_new(&WindowProperty::objects);
                 WindowProperty::setDefaultWindowProperty();
-                SDL_SetWindowSize(window,WindowProperty::WindowWidth,WindowProperty::WindowHeight);
+                window.rect.h = WindowProperty::WindowHeight;
+                window.rect.w = WindowProperty::WindowWidth;
+                SDL_SetWindowSize(WindowProperty::window.window,WindowProperty::WindowWidth,WindowProperty::WindowHeight);
             }
             else{
                 float wScale = (float)(event.window.data1) / (float)WindowProperty::WindowWidth;

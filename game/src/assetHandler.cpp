@@ -1,8 +1,6 @@
-#include "assetHandler.h"
-
+#include "AssetHandler.h"
 /**
     Initializes all Assets in the Game
-    TODO:: Refactor to place all characters in a vector
 */
 void assetHandler::init(){
 
@@ -18,11 +16,12 @@ void assetHandler::update(){
 */
 
 void assetHandler::render(){
+
 }
 /**
     Handles Key Events for game objects
 */
 void assetHandler::keyEventHandler(){
-}
 
+}
 

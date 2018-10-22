@@ -14,7 +14,6 @@ class assetHandler
         void update();
         void render();
         void keyEventHandler();
-
     private:
         Media music;
         int frameStart;

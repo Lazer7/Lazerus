@@ -43,8 +43,23 @@
 			<Add directory="game_engine/external_libraries/SDL2/lib/sdl_lib" />
 			<Add directory="game_engine/external_libraries/SDL2/lib/ttf_lib" />
 		</Linker>
-		<Unit filename="game/include/assetHandler.h" />
-		<Unit filename="game/src/assetHandler.cpp" />
+		<Unit filename="game/include/AssetHandler.h" />
+		<Unit filename="game/src/AssetHandler.cpp" />
+		<Unit filename="game_engine/Main.cpp" />
+		<Unit filename="game_engine/external_libraries/GUI/kiss_draw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/GUI/kiss_general.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/GUI/kiss_posix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/GUI/kiss_sdl.h" />
+		<Unit filename="game_engine/external_libraries/GUI/kiss_widgets.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_engine/external_libraries/SHA/sha2.h" />
 		<Unit filename="game_engine/include/GameObject.h" />
 		<Unit filename="game_engine/include/Media.h" />
 		<Unit filename="game_engine/include/Vector2D.h" />
@@ -55,8 +70,6 @@
 		<Unit filename="game_engine/include/components/Components.h" />
 		<Unit filename="game_engine/include/components/SpriteRenderer.h" />
 		<Unit filename="game_engine/include/components/TransformComponent.h" />
-		<Unit filename="game_engine/include/sha2.h" />
-		<Unit filename="game_engine/main.cpp" />
 		<Unit filename="game_engine/src/Media.cpp" />
 		<Unit filename="game_engine/src/Vector2D.cpp" />
 		<Unit filename="game_engine/src/Window.cpp" />
