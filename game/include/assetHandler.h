@@ -14,7 +14,6 @@ class assetHandler
         void update();
         void render();
         void keyEventHandler();
-        void button_event(kiss_button *button, SDL_Event *e, int *draw,int *quit);
     private:
         Media music;
         int frameStart;
