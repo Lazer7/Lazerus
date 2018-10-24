@@ -60,6 +60,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="game_engine/external_libraries/SHA/sha2.h" />
+		<Unit filename="game_engine/include/FileManager.h" />
 		<Unit filename="game_engine/include/GameObject.h" />
 		<Unit filename="game_engine/include/Media.h" />
 		<Unit filename="game_engine/include/Vector2D.h" />

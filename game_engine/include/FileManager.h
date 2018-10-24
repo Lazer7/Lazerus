@@ -21,11 +21,13 @@ public:
         std::ifstream in(filename,std::ios::binary); // Get files
         if(in.is_open()){ // Check if file is open
             size_t identifierSize; // Get size
+            int sizeOfIndentifier;
             in.read((char*)&identifierSize,sizeof(size_t));
-            char* identifier = new char[identifierSize+1];
+            sizeOfIndentifier = static_cast<int>(identifierSize);
+            char* identifier = new char[sizeOfIndentifier+1];
             in.read(identifier, identifierSize);
             in.read((char*) &result, sizeof(result));
-            identifier[identifierSize] ='\0';
+            identifier[sizeOfIndentifier] ='\0';
             std::string identifier1(identifier);
             std::string dataString((char*) &result);
             std::string identifier2 = Sha2::hash256_hex_string(dataString);
