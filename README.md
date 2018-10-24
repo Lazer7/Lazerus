@@ -45,8 +45,11 @@ Welcome if you are an ascended being and are using Linux, Okay... As a reminder 
 To download SDL2 files use this 
 
 > sudo apt-get install libsdl2-dev
+
 > sudo apt-get install libsdl2-image-dev
+
 > sudo apt-get install libsdl2-mixer-dev
+
 > sudo apt-get install libsdl2-ttf-dev
 
 1. Open up the lazerus project folder by clicking on on Lazerus.cbp
