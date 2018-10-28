@@ -32,9 +32,9 @@ Window::Window() {
         // Set background to white
         SDL_SetRenderDrawColor(WindowProperty::renderer,255,255,255,255);
         int frameStart = SDL_GetTicks();
+        asset.init();
         // Load Loading Screen
         while( 2000>(SDL_GetTicks()-frameStart)&& WindowProperty::isRunning)this->loadingScreen();
-        asset.init();
     }
     else{
         printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
