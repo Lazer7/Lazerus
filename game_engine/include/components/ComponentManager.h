@@ -63,6 +63,9 @@ class Entity{
         }
         bool isActive(){ return active;}
         void destroy(){ active=false;}
+        void destroyAll(){
+            for(auto& c: components) c->~Component();
+        }
         template <typename T> bool hasComponent()const
         {
             return componentBitSet[getComponentID<T>()];
